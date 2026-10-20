@@ -14,13 +14,13 @@ from socket import *
 
 #create UDP socket
 serverSocket = socket(AF_INET,SOCK_DGRAM)
-address = ("",12000)
+address = ("127.0.0.1",12000)
 serverSocket.bind(address)
 print("Server is ready")
 
 while True:
     (byteS , RetAddress) =  serverSocket.recvfrom(2048)
-
+    print(RetAddress)
     bytTostr = byteS.decode()
 
     upperCase = bytTostr.upper()
